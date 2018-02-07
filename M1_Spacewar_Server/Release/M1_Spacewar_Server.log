@@ -1,0 +1,60 @@
+﻿  C_M1_Spacewar_Server.cpp
+  Unknown compiler version - please run the configure tests and report the results
+E:\Programming\C++\Libraries\M1\M1Timer\include\M1Timer.h(30): warning C4244: 'return': conversion from '__int64' to 'uint32_t', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(148): warning C4267: '=': conversion from 'size_t' to 'uint8_t', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(204): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(205): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(206): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(207): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(150): warning C4018: '<': signed/unsigned mismatch
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(166): warning C4018: '<': signed/unsigned mismatch
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(182): warning C4018: '<': signed/unsigned mismatch
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(187): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(188): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(207): warning C4018: '<': signed/unsigned mismatch
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(211): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(212): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(235): warning C4018: '<': signed/unsigned mismatch
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(242): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(243): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(259): warning C4018: '<': signed/unsigned mismatch
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(266): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(267): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C_M1_Spacewar_Server.cpp(51): warning C4018: '<': signed/unsigned mismatch
+C_M1_Spacewar_Server.cpp(86): warning C4018: '<': signed/unsigned mismatch
+  Global.cpp
+  Unknown compiler version - please run the configure tests and report the results
+E:\Programming\C++\Libraries\M1\M1Timer\include\M1Timer.h(30): warning C4244: 'return': conversion from '__int64' to 'uint32_t', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(148): warning C4267: '=': conversion from 'size_t' to 'uint8_t', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(204): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(205): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(206): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(207): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  main.cpp
+  Unknown compiler version - please run the configure tests and report the results
+E:\Programming\C++\Libraries\M1\M1Timer\include\M1Timer.h(30): warning C4244: 'return': conversion from '__int64' to 'uint32_t', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(148): warning C4267: '=': conversion from 'size_t' to 'uint8_t', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(204): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(205): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(206): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\Global.h(207): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(150): warning C4018: '<': signed/unsigned mismatch
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(166): warning C4018: '<': signed/unsigned mismatch
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(182): warning C4018: '<': signed/unsigned mismatch
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(187): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(188): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(207): warning C4018: '<': signed/unsigned mismatch
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(211): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(212): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(235): warning C4018: '<': signed/unsigned mismatch
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(242): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(243): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(259): warning C4018: '<': signed/unsigned mismatch
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(266): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+e:\programming\c++\projects\m1_spacewar_server\m1_spacewar_server\C_M1_Spacewar_Server.h(267): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Generating code
+  All 1000 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+M1Timer.lib(M1Timer.obj) : warning LNK4099: PDB 'M1Timer.pdb' was not found with 'M1Timer.lib(M1Timer.obj)' or at 'E:\Programming\C++\Projects\M1_Spacewar_Server\Release\M1Timer.pdb'; linking object as if no debug info
+M1Random.lib(M1Random.obj) : warning LNK4099: PDB 'M1Random.pdb' was not found with 'M1Random.lib(M1Random.obj)' or at 'E:\Programming\C++\Projects\M1_Spacewar_Server\Release\M1Random.pdb'; linking object as if no debug info
+  M1_Spacewar_Server.vcxproj -> E:\Programming\C++\Projects\M1_Spacewar_Server\Release\M1_Spacewar_Server.exe
