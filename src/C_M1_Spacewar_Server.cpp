@@ -182,11 +182,13 @@ void C_M1_Spacewar_Server::MultiplayerThread_Send()
 		SDLNet_UDP_Send(socket, 2, &gameInfoPacket);
 
 		sleepTime = SERVER_TICKRATE_DELAY - (SDL_GetTicks() - startTime);
-		if (sleepTime > 0)
+		if (sleepTime > 0 && sleepTime <= SERVER_TICKRATE_DELAY)
 		{
 			std::this_thread::sleep_for(std::chrono::milliseconds(sleepTime));
 		}
+		
 
+		//std::this_thread::sleep_for(std::chrono::milliseconds(15));
 		
 	}
 
