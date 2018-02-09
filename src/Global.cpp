@@ -7,7 +7,7 @@ const Uint32 STARTTIME = 3000;
 const unsigned int SERVER_PORT = 55555;
 
 const short SERVER_TICKRATE = 64;
-const short SERVER_TICKRATE_DELAY = 1000/SERVER_TICKRATE;
+const int32_t SERVER_TICKRATE_DELAY = 1000000/SERVER_TICKRATE;
 
 boost::mutex mutex_iostream;
 boost::mutex mutex_playerData[2];
