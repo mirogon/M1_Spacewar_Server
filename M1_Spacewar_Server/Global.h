@@ -19,7 +19,7 @@ extern const int CLIENT_NUM;
 extern const Uint32 STARTTIME;
 extern const unsigned int SERVER_PORT;
 extern const short SERVER_TICKRATE;
-extern const short SERVER_TICKRATE_DELAY;
+extern const int32_t SERVER_TICKRATE_DELAY;
 
 extern boost::mutex mutex_iostream;
 extern boost::mutex mutex_playerData[2];

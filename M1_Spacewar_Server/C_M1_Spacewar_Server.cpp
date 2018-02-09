@@ -85,7 +85,7 @@ void C_M1_Spacewar_Server::SendStartTime()
 	
 	for (int i = 0; i < clientEndpoints.size(); ++i)
 	{	
-		Uint32 startTime = STARTTIME + timer.GetTimeSinceStart();
+		Uint32 startTime = STARTTIME + timer.GetTimeSinceStart_milliseconds();
 		memcpy(p.data, &startTime, p.len);
 		SDLNet_UDP_Send(socket, 1+i, &p);
 	}
@@ -141,13 +141,13 @@ void C_M1_Spacewar_Server::MultiplayerThread_Send()
 	UDPpacket gameInfoPacket = *SDLNet_AllocPacket(sizeof(m1::multiplayerData_GameInfo));
 	gameInfoPacket.len = sizeof(m1::multiplayerData_GameInfo);
 
-	static Uint32 startTime = SDL_GetTicks();
+	static uint64_t startTime = mainTimer.GetTimeSinceStart_microseconds();
 	uint32_t sleepTime = 0;
 
 	while (gameEnded == false)
 	{
 		
-		startTime = SDL_GetTicks();
+		startTime = mainTimer.GetTimeSinceStart_microseconds();
 
 		//Sent Player 2 data to client 1
 		m1::SafeMemcpy(playerDataPacket.data, &playerData.at(1), sizeof(m1::multiplayerData_Player));
@@ -181,14 +181,13 @@ void C_M1_Spacewar_Server::MultiplayerThread_Send()
 		m1::SafeMemcpy(gameInfoPacket.data, &gameInfo[1], sizeof(m1::multiplayerData_GameInfo));
 		SDLNet_UDP_Send(socket, 2, &gameInfoPacket);
 
-		sleepTime = SERVER_TICKRATE_DELAY - (SDL_GetTicks() - startTime);
+		
+		sleepTime = SERVER_TICKRATE_DELAY - (mainTimer.GetTimeSinceStart_microseconds() - startTime);
 		if (sleepTime > 0 && sleepTime <= SERVER_TICKRATE_DELAY)
 		{
-			std::this_thread::sleep_for(std::chrono::milliseconds(sleepTime));
+			std::this_thread::sleep_for(std::chrono::microseconds(sleepTime));
 		}
 		
-
-		//std::this_thread::sleep_for(std::chrono::milliseconds(15));
 		
 	}
 

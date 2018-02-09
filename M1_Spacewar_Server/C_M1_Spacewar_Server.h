@@ -74,8 +74,13 @@ inline void C_M1_Spacewar_Server::ReceiveAndHandleClientPackets()
 	static uint8_t ID = 0;
 	static short endpointIndex;
 
+	static uint64_t startTime = mainTimer.GetTimeSinceStart_microseconds();
+	static uint32_t sleepTime = 0;
+
 	while (gameEnded == false)
 	{
+		startTime = mainTimer.GetTimeSinceStart_microseconds();
+
 		short rc = SDLNet_UDP_Recv(socket, &packet);
 
 		if (rc == 1)
@@ -111,6 +116,9 @@ inline void C_M1_Spacewar_Server::ReceiveAndHandleClientPackets()
 				mutex_bulletData[endpointIndex].unlock();
 				break;
 			}
+
+
+
 		}
 
 		else if (rc == 0)
@@ -122,22 +130,29 @@ inline void C_M1_Spacewar_Server::ReceiveAndHandleClientPackets()
 			throw SDLNet_GetError();
 		}
 
+		sleepTime = 4000 - (mainTimer.GetTimeSinceStart_microseconds() - startTime);
+		if (sleepTime > 0 && sleepTime <= 2000)
+		{
+			//m1::SafeLog("SleepTime: ", sleepTime, "\n");
+			std::this_thread::sleep_for(std::chrono::microseconds(sleepTime));
+		}
+
 	}
 
 }
 
 inline void C_M1_Spacewar_Server::GenerateAsteroidPositions()
 {
-	static uint32_t lastTime = mainTimer.GetTimeSinceStart();
-	//m1::SafeLog("Time since start: ", mainTimer.GetTimeSinceStart(),"\n");
-	if (mainTimer.GetTimeSinceStart() - lastTime >= ASTEROID_SPAWN_LATENCY)
+	static uint32_t lastTime = mainTimer.GetTimeSinceStart_milliseconds();
+	//m1::SafeLog("Time since start: ", mainTimer.GetTimeSinceStart_milliseconds(),"\n");
+	if (mainTimer.GetTimeSinceStart_milliseconds() - lastTime >= ASTEROID_SPAWN_LATENCY)
 	{
 		//m1::SafeLog("Created Asteroid\n");
 		mutex_asteroids.lock();
 		asteroidPositions.push_back( m1::double_Position( randomGenerator.randomNumber(-ASTEROID_SIZE, WINDOW_SIZE - ASTEROID_SIZE / 2 ) , -ASTEROID_SIZE*5 ) );
 		mutex_asteroids.unlock();
 
-		lastTime = mainTimer.GetTimeSinceStart();
+		lastTime = mainTimer.GetTimeSinceStart_milliseconds();
 	}
 
 }
@@ -282,9 +297,9 @@ inline void C_M1_Spacewar_Server::AsteroidsPlayerCollisionHandling()
 
 inline void C_M1_Spacewar_Server::RaiseScores()
 {
-	static uint32_t lastTime = mainTimer.GetTimeSinceStart();
+	static uint32_t lastTime = mainTimer.GetTimeSinceStart_milliseconds();
 
-	if (mainTimer.GetTimeSinceStart() - lastTime >= 1000)
+	if (mainTimer.GetTimeSinceStart_milliseconds() - lastTime >= 1000)
 	{
 		mutex_gameInfo[0].lock();
 		gameInfo[0].score += 25;
@@ -294,22 +309,22 @@ inline void C_M1_Spacewar_Server::RaiseScores()
 		gameInfo[1].score += 25;
 		mutex_gameInfo[1].unlock();
 
-		lastTime = mainTimer.GetTimeSinceStart();
+		lastTime = mainTimer.GetTimeSinceStart_milliseconds();
 	}
 }
 
 inline void C_M1_Spacewar_Server::UpdateRemainingTime()
 {
-	static uint32_t startTime = mainTimer.GetTimeSinceStart();
+	static uint32_t startTime = mainTimer.GetTimeSinceStart_milliseconds();
 
 	if (firstTime_UpdateRemainingTime == true)
 	{
 		firstTime_UpdateRemainingTime = false;
-		startTime = mainTimer.GetTimeSinceStart();
+		startTime = mainTimer.GetTimeSinceStart_milliseconds();
 
 	}
 
-	if ((startTime + PLAYTIME) - mainTimer.GetTimeSinceStart() == 0 || (startTime + PLAYTIME) - mainTimer.GetTimeSinceStart() > PLAYTIME)
+	if ((startTime + PLAYTIME) - mainTimer.GetTimeSinceStart_milliseconds() == 0 || (startTime + PLAYTIME) - mainTimer.GetTimeSinceStart_milliseconds() > PLAYTIME)
 	{
 		gameInfo[0].remainingTime = 0;
 		gameInfo[1].remainingTime = 0;
@@ -317,8 +332,8 @@ inline void C_M1_Spacewar_Server::UpdateRemainingTime()
 
 	else
 	{
-		gameInfo[0].remainingTime = (startTime + PLAYTIME) - mainTimer.GetTimeSinceStart();
-		gameInfo[1].remainingTime = (startTime + PLAYTIME) - mainTimer.GetTimeSinceStart();
+		gameInfo[0].remainingTime = (startTime + PLAYTIME) - mainTimer.GetTimeSinceStart_milliseconds();
+		gameInfo[1].remainingTime = (startTime + PLAYTIME) - mainTimer.GetTimeSinceStart_milliseconds();
 	}
 
 

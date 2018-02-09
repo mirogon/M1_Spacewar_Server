@@ -45,13 +45,13 @@ int main(int argc, char* argv[])
 
 			m1::SafeLog("Start time sent to all clients!\n");
 
-			gameServer.Start();
-
 			SDL_Delay(STARTTIME);
+
+			gameServer.Start();
 
 			while (gameEnded == false)
 			{
-				static uint32_t lastTime = mainTimer.GetTimeSinceStart();
+				static uint32_t lastTime = mainTimer.GetTimeSinceStart_milliseconds();
 
 				gameServer.UpdateRemainingTime();
 				if (gameServer.CheckWhoWon() == true)
@@ -60,8 +60,8 @@ int main(int argc, char* argv[])
 				}
 				gameServer.GenerateAsteroidPositions();
 
-				gameServer.MoveAsteroids(mainTimer.GetTimeSinceStart() - lastTime);
-				lastTime = mainTimer.GetTimeSinceStart();
+				gameServer.MoveAsteroids(mainTimer.GetTimeSinceStart_milliseconds() - lastTime);
+				lastTime = mainTimer.GetTimeSinceStart_milliseconds();
 
 				gameServer.DeleteInactiveAsteroids();
 
